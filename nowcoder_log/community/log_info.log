@@ -1,0 +1,5 @@
+2024-08-07 19:36:50,726 INFO [main] c.n.c.LogTests [StartupInfoLogger.java:50] Starting LogTests using Java 17.0.12 with PID 14880 (started by ztx in /home/ztx/JavaProjects/community)
+2024-08-07 19:36:50,728 INFO [main] c.n.c.LogTests [SpringApplication.java:654] No active profile set, falling back to 1 default profile: "default"
+2024-08-07 19:36:51,438 INFO [main] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:59] Adding welcome page template: index
+2024-08-07 19:36:51,621 INFO [main] c.n.c.LogTests [StartupInfoLogger.java:56] Started LogTests in 1.149 seconds (process running for 1.553)
+2024-08-07 19:36:52,009 INFO [main] c.n.c.LogTests [LogTests.java:20] info log
