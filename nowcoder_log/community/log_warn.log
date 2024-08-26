@@ -1,279 +1,35 @@
-2024-08-25 11:06:36,717 WARN [main] o.s.w.c.s.GenericWebApplicationContext [AbstractApplicationContext.java:633] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sensitiveFilter': Invocation of init method failed
-2024-08-25 11:06:36,745 WARN [main] o.s.t.c.TestContextManager [TestContextManager.java:272] Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener] to prepare test instance [com.nowcoder.community.SensitiveTests@5d3b58ca]
-java.lang.IllegalStateException: Failed to load ApplicationContext for [WebMergedContextConfiguration@69909c14 testClass = com.nowcoder.community.SensitiveTests, locations = [], classes = [com.nowcoder.community.CommunityApplication], contextInitializerClasses = [], activeProfiles = [], propertySourceDescriptors = [], propertySourceProperties = ["org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true"], contextCustomizers = [org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@2133814f, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@7d3a22a9, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@3901d134, org.springframework.boot.test.web.reactor.netty.DisableReactorResourceFactoryGlobalResourcesContextCustomizerFactory$DisableReactorResourceFactoryGlobalResourcesContextCustomizerCustomizer@2ddc8ecb, org.springframework.boot.test.autoconfigure.actuate.observability.ObservabilityContextCustomizerFactory$DisableObservabilityContextCustomizer@1f, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizer@4313f5bc, org.springframework.boot.test.context.SpringBootTestAnnotation@9de63969], resourceBasePath = "src/main/webapp", contextLoader = org.springframework.boot.test.context.SpringBootContextLoader, parent = null]
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:180)
-	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:130)
-	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:191)
-	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:130)
-	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:260)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
-	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
-	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
-	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
-	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
-	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
-	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
-	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
-	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
-	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
-	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
-	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
-	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sensitiveFilter': Invocation of init method failed
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:222)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:422)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1798)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:971)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
-	at org.springframework.boot.test.context.SpringBootContextLoader.lambda$loadContext$3(SpringBootContextLoader.java:137)
-	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:58)
-	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:46)
-	at org.springframework.boot.SpringApplication.withHook(SpringApplication.java:1463)
-	at org.springframework.boot.test.context.SpringBootContextLoader$ContextLoaderHook.run(SpringBootContextLoader.java:553)
-	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:137)
-	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:108)
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:225)
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:152)
-	... 27 common frames omitted
-Caused by: java.lang.NullPointerException: null
-	at java.base/java.io.Reader.<init>(Reader.java:168)
-	at java.base/java.io.InputStreamReader.<init>(InputStreamReader.java:76)
-	at com.nowcoder.community.util.SensitiveFilter.init(SensitiveFilter.java:40)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457)
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:401)
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:219)
-	... 50 common frames omitted
-2024-08-25 11:07:41,497 WARN [main] o.s.w.c.s.GenericWebApplicationContext [AbstractApplicationContext.java:633] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sensitiveFilter': Invocation of init method failed
-2024-08-25 11:07:41,516 WARN [main] o.s.t.c.TestContextManager [TestContextManager.java:272] Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener] to prepare test instance [com.nowcoder.community.SensitiveTests@78ec89a6]
-java.lang.IllegalStateException: Failed to load ApplicationContext for [WebMergedContextConfiguration@4519f676 testClass = com.nowcoder.community.SensitiveTests, locations = [], classes = [com.nowcoder.community.CommunityApplication], contextInitializerClasses = [], activeProfiles = [], propertySourceDescriptors = [], propertySourceProperties = ["org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true"], contextCustomizers = [org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@2133814f, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@7d3a22a9, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@3901d134, org.springframework.boot.test.web.reactor.netty.DisableReactorResourceFactoryGlobalResourcesContextCustomizerFactory$DisableReactorResourceFactoryGlobalResourcesContextCustomizerCustomizer@2ddc8ecb, org.springframework.boot.test.autoconfigure.actuate.observability.ObservabilityContextCustomizerFactory$DisableObservabilityContextCustomizer@1f, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizer@4313f5bc, org.springframework.boot.test.context.SpringBootTestAnnotation@9de63969], resourceBasePath = "src/main/webapp", contextLoader = org.springframework.boot.test.context.SpringBootContextLoader, parent = null]
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:180)
-	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:130)
-	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:191)
-	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:130)
-	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:260)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
-	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
-	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
-	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
-	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
-	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
-	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
-	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
-	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
-	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
-	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
-	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
-	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sensitiveFilter': Invocation of init method failed
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:222)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:422)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1798)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:971)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
-	at org.springframework.boot.test.context.SpringBootContextLoader.lambda$loadContext$3(SpringBootContextLoader.java:137)
-	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:58)
-	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:46)
-	at org.springframework.boot.SpringApplication.withHook(SpringApplication.java:1463)
-	at org.springframework.boot.test.context.SpringBootContextLoader$ContextLoaderHook.run(SpringBootContextLoader.java:553)
-	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:137)
-	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:108)
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:225)
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:152)
-	... 27 common frames omitted
-Caused by: java.lang.NullPointerException: null
-	at java.base/java.io.Reader.<init>(Reader.java:168)
-	at java.base/java.io.InputStreamReader.<init>(InputStreamReader.java:76)
-	at com.nowcoder.community.util.SensitiveFilter.init(SensitiveFilter.java:40)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457)
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:401)
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:219)
-	... 50 common frames omitted
-2024-08-25 11:08:09,570 WARN [main] o.s.w.c.s.GenericWebApplicationContext [AbstractApplicationContext.java:633] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sensitiveFilter': Invocation of init method failed
-2024-08-25 11:08:09,589 WARN [main] o.s.t.c.TestContextManager [TestContextManager.java:272] Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener] to prepare test instance [com.nowcoder.community.SensitiveTests@294aba23]
-java.lang.IllegalStateException: Failed to load ApplicationContext for [WebMergedContextConfiguration@642ee49c testClass = com.nowcoder.community.SensitiveTests, locations = [], classes = [com.nowcoder.community.CommunityApplication], contextInitializerClasses = [], activeProfiles = [], propertySourceDescriptors = [], propertySourceProperties = ["org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true"], contextCustomizers = [org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@2133814f, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@7d3a22a9, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@3901d134, org.springframework.boot.test.web.reactor.netty.DisableReactorResourceFactoryGlobalResourcesContextCustomizerFactory$DisableReactorResourceFactoryGlobalResourcesContextCustomizerCustomizer@2ddc8ecb, org.springframework.boot.test.autoconfigure.actuate.observability.ObservabilityContextCustomizerFactory$DisableObservabilityContextCustomizer@1f, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizer@4313f5bc, org.springframework.boot.test.context.SpringBootTestAnnotation@9de63969], resourceBasePath = "src/main/webapp", contextLoader = org.springframework.boot.test.context.SpringBootContextLoader, parent = null]
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:180)
-	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:130)
-	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:191)
-	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:130)
-	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:260)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
-	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
-	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
-	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
-	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
-	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
-	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
-	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
-	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
-	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
-	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
-	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
-	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sensitiveFilter': Invocation of init method failed
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:222)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:422)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1798)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:971)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
-	at org.springframework.boot.test.context.SpringBootContextLoader.lambda$loadContext$3(SpringBootContextLoader.java:137)
-	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:58)
-	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:46)
-	at org.springframework.boot.SpringApplication.withHook(SpringApplication.java:1463)
-	at org.springframework.boot.test.context.SpringBootContextLoader$ContextLoaderHook.run(SpringBootContextLoader.java:553)
-	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:137)
-	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:108)
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:225)
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:152)
-	... 27 common frames omitted
-Caused by: java.lang.NullPointerException: null
-	at java.base/java.io.Reader.<init>(Reader.java:168)
-	at java.base/java.io.InputStreamReader.<init>(InputStreamReader.java:76)
-	at com.nowcoder.community.util.SensitiveFilter.init(SensitiveFilter.java:40)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457)
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:401)
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:219)
-	... 50 common frames omitted
-2024-08-25 11:11:13,040 WARN [main] o.s.w.c.s.GenericWebApplicationContext [AbstractApplicationContext.java:633] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sensitiveFilter': Invocation of init method failed
-2024-08-25 11:11:13,086 WARN [main] o.s.t.c.TestContextManager [TestContextManager.java:272] Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener] to prepare test instance [com.nowcoder.community.SensitiveTests@2b148329]
-java.lang.IllegalStateException: Failed to load ApplicationContext for [WebMergedContextConfiguration@39c85c1a testClass = com.nowcoder.community.SensitiveTests, locations = [], classes = [com.nowcoder.community.CommunityApplication], contextInitializerClasses = [], activeProfiles = [], propertySourceDescriptors = [], propertySourceProperties = ["org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true"], contextCustomizers = [org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@3d121db3, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@12d4bf7e, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@4445629, org.springframework.boot.test.web.reactor.netty.DisableReactorResourceFactoryGlobalResourcesContextCustomizerFactory$DisableReactorResourceFactoryGlobalResourcesContextCustomizerCustomizer@647fd8ce, org.springframework.boot.test.autoconfigure.actuate.observability.ObservabilityContextCustomizerFactory$DisableObservabilityContextCustomizer@1f, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizer@2ea227af, org.springframework.boot.test.context.SpringBootTestAnnotation@c1430e3e], resourceBasePath = "src/main/webapp", contextLoader = org.springframework.boot.test.context.SpringBootContextLoader, parent = null]
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:180)
-	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:130)
-	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:191)
-	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:130)
-	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:260)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
-	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
-	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
-	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
-	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
-	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
-	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
-	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
-	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
-	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
-	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
-	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
-	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sensitiveFilter': Invocation of init method failed
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:222)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:422)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1798)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:971)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
-	at org.springframework.boot.test.context.SpringBootContextLoader.lambda$loadContext$3(SpringBootContextLoader.java:137)
-	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:58)
-	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:46)
-	at org.springframework.boot.SpringApplication.withHook(SpringApplication.java:1463)
-	at org.springframework.boot.test.context.SpringBootContextLoader$ContextLoaderHook.run(SpringBootContextLoader.java:553)
-	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:137)
-	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:108)
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:225)
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:152)
-	... 27 common frames omitted
-Caused by: java.lang.NullPointerException: null
-	at java.base/java.io.Reader.<init>(Reader.java:168)
-	at java.base/java.io.InputStreamReader.<init>(InputStreamReader.java:76)
-	at com.nowcoder.community.util.SensitiveFilter.init(SensitiveFilter.java:40)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457)
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:401)
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:219)
-	... 50 common frames omitted
-2024-08-25 15:19:51,007 WARN [http-nio-8080-exec-1] o.s.w.s.m.s.DefaultHandlerExceptionResolver [AbstractHandlerExceptionResolver.java:247] Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
-2024-08-25 17:01:50,843 WARN [http-nio-8080-exec-8] o.t.s.p.AbstractStandardFragmentInsertionTagProcessor [AbstractStandardFragmentInsertionTagProcessor.java:385] [THYMELEAF][http-nio-8080-exec-8][/site/discuss-detail] Deprecated unwrapped fragment expression "index::header" found in template /site/discuss-detail, line 15, col 38. Please use the complete syntax of fragment expressions instead ("~{index::header}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
-2024-08-25 17:02:29,263 WARN [http-nio-8080-exec-5] o.t.s.p.AbstractStandardFragmentInsertionTagProcessor [AbstractStandardFragmentInsertionTagProcessor.java:385] [THYMELEAF][http-nio-8080-exec-5][/site/discuss-detail] Deprecated unwrapped fragment expression "index::header" found in template /site/discuss-detail, line 15, col 38. Please use the complete syntax of fragment expressions instead ("~{index::header}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-08-26 16:44:35,980 WARN [http-nio-8080-exec-9] o.t.s.p.AbstractStandardFragmentInsertionTagProcessor [AbstractStandardFragmentInsertionTagProcessor.java:385] [THYMELEAF][http-nio-8080-exec-9][/site/discuss-detail] Deprecated unwrapped fragment expression "index::header" found in template /site/discuss-detail, line 15, col 38. Please use the complete syntax of fragment expressions instead ("~{index::header}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-08-26 16:44:43,528 WARN [http-nio-8080-exec-6] o.t.s.p.AbstractStandardFragmentInsertionTagProcessor [AbstractStandardFragmentInsertionTagProcessor.java:385] [THYMELEAF][http-nio-8080-exec-6][/site/discuss-detail] Deprecated unwrapped fragment expression "index::header" found in template /site/discuss-detail, line 15, col 38. Please use the complete syntax of fragment expressions instead ("~{index::header}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-08-26 16:44:59,883 WARN [http-nio-8080-exec-4] o.t.s.p.AbstractStandardFragmentInsertionTagProcessor [AbstractStandardFragmentInsertionTagProcessor.java:385] [THYMELEAF][http-nio-8080-exec-4][/site/discuss-detail] Deprecated unwrapped fragment expression "index::header" found in template /site/discuss-detail, line 15, col 38. Please use the complete syntax of fragment expressions instead ("~{index::header}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-08-26 16:47:31,760 WARN [http-nio-8080-exec-6] o.t.s.p.AbstractStandardFragmentInsertionTagProcessor [AbstractStandardFragmentInsertionTagProcessor.java:385] [THYMELEAF][http-nio-8080-exec-6][/site/discuss-detail] Deprecated unwrapped fragment expression "index::header" found in template /site/discuss-detail, line 15, col 38. Please use the complete syntax of fragment expressions instead ("~{index::header}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-08-26 18:23:01,965 WARN [restartedMain] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext [AbstractApplicationContext.java:633] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'discussPostController': Unsatisfied dependency expressed through field 'page': No qualifying bean of type 'com.nowcoder.community.entity.Page' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2024-08-26 18:24:49,401 WARN [http-nio-8080-exec-8] o.t.s.p.AbstractStandardFragmentInsertionTagProcessor [AbstractStandardFragmentInsertionTagProcessor.java:385] [THYMELEAF][http-nio-8080-exec-8][/site/discuss-detail] Deprecated unwrapped fragment expression "index::header" found in template /site/discuss-detail, line 15, col 38. Please use the complete syntax of fragment expressions instead ("~{index::header}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-08-26 18:24:49,416 WARN [http-nio-8080-exec-8] o.t.s.p.AbstractStandardFragmentInsertionTagProcessor [AbstractStandardFragmentInsertionTagProcessor.java:385] [THYMELEAF][http-nio-8080-exec-8][/site/discuss-detail] Deprecated unwrapped fragment expression "index::pagination" found in template /site/discuss-detail, line 184, col 23. Please use the complete syntax of fragment expressions instead ("~{index::pagination}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-08-26 18:25:13,637 WARN [http-nio-8080-exec-1] o.t.s.p.AbstractStandardFragmentInsertionTagProcessor [AbstractStandardFragmentInsertionTagProcessor.java:385] [THYMELEAF][http-nio-8080-exec-1][/site/discuss-detail] Deprecated unwrapped fragment expression "index::header" found in template /site/discuss-detail, line 15, col 38. Please use the complete syntax of fragment expressions instead ("~{index::header}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-08-26 18:25:13,645 WARN [http-nio-8080-exec-1] o.t.s.p.AbstractStandardFragmentInsertionTagProcessor [AbstractStandardFragmentInsertionTagProcessor.java:385] [THYMELEAF][http-nio-8080-exec-1][/site/discuss-detail] Deprecated unwrapped fragment expression "index::pagination" found in template /site/discuss-detail, line 184, col 23. Please use the complete syntax of fragment expressions instead ("~{index::pagination}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-08-26 18:25:20,475 WARN [http-nio-8080-exec-3] o.t.s.p.AbstractStandardFragmentInsertionTagProcessor [AbstractStandardFragmentInsertionTagProcessor.java:385] [THYMELEAF][http-nio-8080-exec-3][/site/discuss-detail] Deprecated unwrapped fragment expression "index::header" found in template /site/discuss-detail, line 15, col 38. Please use the complete syntax of fragment expressions instead ("~{index::header}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-08-26 18:25:20,480 WARN [http-nio-8080-exec-3] o.t.s.p.AbstractStandardFragmentInsertionTagProcessor [AbstractStandardFragmentInsertionTagProcessor.java:385] [THYMELEAF][http-nio-8080-exec-3][/site/discuss-detail] Deprecated unwrapped fragment expression "index::pagination" found in template /site/discuss-detail, line 184, col 23. Please use the complete syntax of fragment expressions instead ("~{index::pagination}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-08-26 18:27:13,802 WARN [http-nio-8080-exec-8] o.t.s.p.AbstractStandardFragmentInsertionTagProcessor [AbstractStandardFragmentInsertionTagProcessor.java:385] [THYMELEAF][http-nio-8080-exec-8][/site/discuss-detail] Deprecated unwrapped fragment expression "index::header" found in template /site/discuss-detail, line 15, col 38. Please use the complete syntax of fragment expressions instead ("~{index::header}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-08-26 18:27:13,821 WARN [http-nio-8080-exec-8] o.t.s.p.AbstractStandardFragmentInsertionTagProcessor [AbstractStandardFragmentInsertionTagProcessor.java:385] [THYMELEAF][http-nio-8080-exec-8][/site/discuss-detail] Deprecated unwrapped fragment expression "index::pagination" found in template /site/discuss-detail, line 184, col 23. Please use the complete syntax of fragment expressions instead ("~{index::pagination}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-08-26 18:27:34,167 WARN [http-nio-8080-exec-8] o.t.s.p.AbstractStandardFragmentInsertionTagProcessor [AbstractStandardFragmentInsertionTagProcessor.java:385] [THYMELEAF][http-nio-8080-exec-8][/site/discuss-detail] Deprecated unwrapped fragment expression "index::header" found in template /site/discuss-detail, line 15, col 38. Please use the complete syntax of fragment expressions instead ("~{index::header}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-08-26 18:27:34,187 WARN [http-nio-8080-exec-8] o.t.s.p.AbstractStandardFragmentInsertionTagProcessor [AbstractStandardFragmentInsertionTagProcessor.java:385] [THYMELEAF][http-nio-8080-exec-8][/site/discuss-detail] Deprecated unwrapped fragment expression "index::pagination" found in template /site/discuss-detail, line 184, col 23. Please use the complete syntax of fragment expressions instead ("~{index::pagination}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-08-26 18:27:45,385 WARN [http-nio-8080-exec-7] o.t.s.p.AbstractStandardFragmentInsertionTagProcessor [AbstractStandardFragmentInsertionTagProcessor.java:385] [THYMELEAF][http-nio-8080-exec-7][/site/discuss-detail] Deprecated unwrapped fragment expression "index::header" found in template /site/discuss-detail, line 15, col 38. Please use the complete syntax of fragment expressions instead ("~{index::header}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-08-26 18:27:45,393 WARN [http-nio-8080-exec-7] o.t.s.p.AbstractStandardFragmentInsertionTagProcessor [AbstractStandardFragmentInsertionTagProcessor.java:385] [THYMELEAF][http-nio-8080-exec-7][/site/discuss-detail] Deprecated unwrapped fragment expression "index::pagination" found in template /site/discuss-detail, line 184, col 23. Please use the complete syntax of fragment expressions instead ("~{index::pagination}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-08-26 18:27:49,892 WARN [http-nio-8080-exec-9] o.t.s.p.AbstractStandardFragmentInsertionTagProcessor [AbstractStandardFragmentInsertionTagProcessor.java:385] [THYMELEAF][http-nio-8080-exec-9][/site/discuss-detail] Deprecated unwrapped fragment expression "index::header" found in template /site/discuss-detail, line 15, col 38. Please use the complete syntax of fragment expressions instead ("~{index::header}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-08-26 18:27:49,898 WARN [http-nio-8080-exec-9] o.t.s.p.AbstractStandardFragmentInsertionTagProcessor [AbstractStandardFragmentInsertionTagProcessor.java:385] [THYMELEAF][http-nio-8080-exec-9][/site/discuss-detail] Deprecated unwrapped fragment expression "index::pagination" found in template /site/discuss-detail, line 184, col 23. Please use the complete syntax of fragment expressions instead ("~{index::pagination}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-08-26 18:27:52,104 WARN [http-nio-8080-exec-10] o.t.s.p.AbstractStandardFragmentInsertionTagProcessor [AbstractStandardFragmentInsertionTagProcessor.java:385] [THYMELEAF][http-nio-8080-exec-10][/site/discuss-detail] Deprecated unwrapped fragment expression "index::header" found in template /site/discuss-detail, line 15, col 38. Please use the complete syntax of fragment expressions instead ("~{index::header}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-08-26 18:27:52,113 WARN [http-nio-8080-exec-10] o.t.s.p.AbstractStandardFragmentInsertionTagProcessor [AbstractStandardFragmentInsertionTagProcessor.java:385] [THYMELEAF][http-nio-8080-exec-10][/site/discuss-detail] Deprecated unwrapped fragment expression "index::pagination" found in template /site/discuss-detail, line 184, col 23. Please use the complete syntax of fragment expressions instead ("~{index::pagination}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-08-26 18:28:21,691 WARN [http-nio-8080-exec-5] o.t.s.p.AbstractStandardFragmentInsertionTagProcessor [AbstractStandardFragmentInsertionTagProcessor.java:385] [THYMELEAF][http-nio-8080-exec-5][/site/discuss-detail] Deprecated unwrapped fragment expression "index::header" found in template /site/discuss-detail, line 15, col 38. Please use the complete syntax of fragment expressions instead ("~{index::header}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-08-26 18:28:21,696 WARN [http-nio-8080-exec-5] o.t.s.p.AbstractStandardFragmentInsertionTagProcessor [AbstractStandardFragmentInsertionTagProcessor.java:385] [THYMELEAF][http-nio-8080-exec-5][/site/discuss-detail] Deprecated unwrapped fragment expression "index::pagination" found in template /site/discuss-detail, line 184, col 23. Please use the complete syntax of fragment expressions instead ("~{index::pagination}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-08-26 18:28:29,412 WARN [http-nio-8080-exec-3] o.t.s.p.AbstractStandardFragmentInsertionTagProcessor [AbstractStandardFragmentInsertionTagProcessor.java:385] [THYMELEAF][http-nio-8080-exec-3][/site/discuss-detail] Deprecated unwrapped fragment expression "index::header" found in template /site/discuss-detail, line 15, col 38. Please use the complete syntax of fragment expressions instead ("~{index::header}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-08-26 18:28:29,416 WARN [http-nio-8080-exec-3] o.t.s.p.AbstractStandardFragmentInsertionTagProcessor [AbstractStandardFragmentInsertionTagProcessor.java:385] [THYMELEAF][http-nio-8080-exec-3][/site/discuss-detail] Deprecated unwrapped fragment expression "index::pagination" found in template /site/discuss-detail, line 184, col 23. Please use the complete syntax of fragment expressions instead ("~{index::pagination}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-08-26 18:28:32,020 WARN [http-nio-8080-exec-1] o.t.s.p.AbstractStandardFragmentInsertionTagProcessor [AbstractStandardFragmentInsertionTagProcessor.java:385] [THYMELEAF][http-nio-8080-exec-1][/site/discuss-detail] Deprecated unwrapped fragment expression "index::header" found in template /site/discuss-detail, line 15, col 38. Please use the complete syntax of fragment expressions instead ("~{index::header}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-08-26 18:28:32,024 WARN [http-nio-8080-exec-1] o.t.s.p.AbstractStandardFragmentInsertionTagProcessor [AbstractStandardFragmentInsertionTagProcessor.java:385] [THYMELEAF][http-nio-8080-exec-1][/site/discuss-detail] Deprecated unwrapped fragment expression "index::pagination" found in template /site/discuss-detail, line 184, col 23. Please use the complete syntax of fragment expressions instead ("~{index::pagination}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-08-26 18:28:35,748 WARN [http-nio-8080-exec-10] o.t.s.p.AbstractStandardFragmentInsertionTagProcessor [AbstractStandardFragmentInsertionTagProcessor.java:385] [THYMELEAF][http-nio-8080-exec-10][/site/discuss-detail] Deprecated unwrapped fragment expression "index::header" found in template /site/discuss-detail, line 15, col 38. Please use the complete syntax of fragment expressions instead ("~{index::header}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-08-26 18:28:35,752 WARN [http-nio-8080-exec-10] o.t.s.p.AbstractStandardFragmentInsertionTagProcessor [AbstractStandardFragmentInsertionTagProcessor.java:385] [THYMELEAF][http-nio-8080-exec-10][/site/discuss-detail] Deprecated unwrapped fragment expression "index::pagination" found in template /site/discuss-detail, line 184, col 23. Please use the complete syntax of fragment expressions instead ("~{index::pagination}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-08-26 18:30:31,047 WARN [http-nio-8080-exec-1] o.t.s.p.AbstractStandardFragmentInsertionTagProcessor [AbstractStandardFragmentInsertionTagProcessor.java:385] [THYMELEAF][http-nio-8080-exec-1][/site/discuss-detail] Deprecated unwrapped fragment expression "index::header" found in template /site/discuss-detail, line 15, col 38. Please use the complete syntax of fragment expressions instead ("~{index::header}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-08-26 18:30:31,091 WARN [http-nio-8080-exec-1] o.t.s.p.AbstractStandardFragmentInsertionTagProcessor [AbstractStandardFragmentInsertionTagProcessor.java:385] [THYMELEAF][http-nio-8080-exec-1][/site/discuss-detail] Deprecated unwrapped fragment expression "index::pagination" found in template /site/discuss-detail, line 184, col 23. Please use the complete syntax of fragment expressions instead ("~{index::pagination}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-08-26 18:32:24,300 WARN [http-nio-8080-exec-1] o.t.s.p.AbstractStandardFragmentInsertionTagProcessor [AbstractStandardFragmentInsertionTagProcessor.java:385] [THYMELEAF][http-nio-8080-exec-1][/site/discuss-detail] Deprecated unwrapped fragment expression "index::header" found in template /site/discuss-detail, line 15, col 38. Please use the complete syntax of fragment expressions instead ("~{index::header}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-08-26 18:34:28,821 WARN [http-nio-8080-exec-1] o.t.s.p.AbstractStandardFragmentInsertionTagProcessor [AbstractStandardFragmentInsertionTagProcessor.java:385] [THYMELEAF][http-nio-8080-exec-1][/site/discuss-detail] Deprecated unwrapped fragment expression "index::header" found in template /site/discuss-detail, line 15, col 38. Please use the complete syntax of fragment expressions instead ("~{index::header}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-08-26 18:35:19,050 WARN [http-nio-8080-exec-1] o.t.s.p.AbstractStandardFragmentInsertionTagProcessor [AbstractStandardFragmentInsertionTagProcessor.java:385] [THYMELEAF][http-nio-8080-exec-1][/site/discuss-detail] Deprecated unwrapped fragment expression "index::header" found in template /site/discuss-detail, line 15, col 38. Please use the complete syntax of fragment expressions instead ("~{index::header}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-08-26 18:35:19,095 WARN [http-nio-8080-exec-1] o.t.s.p.AbstractStandardFragmentInsertionTagProcessor [AbstractStandardFragmentInsertionTagProcessor.java:385] [THYMELEAF][http-nio-8080-exec-1][/site/discuss-detail] Deprecated unwrapped fragment expression "index::pagination" found in template /site/discuss-detail, line 184, col 23. Please use the complete syntax of fragment expressions instead ("~{index::pagination}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
