@@ -112,8 +112,13 @@ public class LoginController implements CommunityConstant {
                         Model model,HttpSession session,HttpServletResponse response){
         //检查验证码
         String kaptcha = (String)session.getAttribute("kaptcha");
-        if(StringUtils.isBlank(kaptcha) || StringUtils.isBlank(code) || !kaptcha.equalsIgnoreCase(code)){
+        if(StringUtils.isBlank(kaptcha) || StringUtils.isBlank(code)){
             model.addAttribute("codeMsg","验证码不能为空！");
+            return "/site/login";
+        }
+
+        if(!kaptcha.equalsIgnoreCase(code)){
+            model.addAttribute("codeMsg","验证码错误，请重新输入！");
             return "/site/login";
         }
 
