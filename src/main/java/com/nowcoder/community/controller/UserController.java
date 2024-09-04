@@ -128,7 +128,6 @@ public class UserController {
     }
 
     /**
-     * TODO
      * @param oldPassword
      * @param newPassword
      * @param model

@@ -1,0 +1,6 @@
+启动kafka服务
+sudo systemctl start zookeeper
+sudo systemctl start kafka
+
+启动Elasticsearch服务
+sudo systemctl enable elasticsearch.service
