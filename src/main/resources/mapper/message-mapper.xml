@@ -24,7 +24,7 @@
         limit #{offset},#{limit}
     </select>
 
-    <select id="selectConversationCount">
+    <select id="selectConversationCount" resultType="int">
         select count(m.maxid) from(
             select max(id) as maxid from message
             where status != 2
