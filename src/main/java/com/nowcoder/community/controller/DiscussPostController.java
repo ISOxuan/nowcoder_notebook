@@ -8,7 +8,9 @@ import com.nowcoder.community.service.LikeService;
 import com.nowcoder.community.service.UserService;
 import com.nowcoder.community.util.CommunityUtil;
 import com.nowcoder.community.util.HostHolder;
+import com.nowcoder.community.util.RedisKeyUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -42,6 +44,9 @@ public class DiscussPostController {
     @Autowired
     private EventProducer eventProduer;
 
+    @Autowired
+    private RedisTemplate redisTemplate;
+
     @RequestMapping(path = "/add",method = RequestMethod.POST)
     @ResponseBody
     public String addDiscussPost(String title,String content){
@@ -64,6 +69,9 @@ public class DiscussPostController {
                 .setEntityId(post.getId());
         eventProduer.fireEvent(event);
 
+        //计算帖子分数
+        String redisKey = RedisKeyUtil.getPostScoreKey();
+        redisTemplate.opsForSet().add(redisKey,post.getId());
 
         // 报错的情况，将来统一处理
         return CommunityUtil.getJSONString(0,"发布成功！");
@@ -176,6 +184,10 @@ public class DiscussPostController {
                 .setEntityType(ENTITY_TYPE_POST)
                 .setEntityId(id);
         eventProduer.fireEvent(event);
+
+        //计算帖子分数
+        String redisKey = RedisKeyUtil.getPostScoreKey();
+        redisTemplate.opsForSet().add(redisKey,id);
 
         return CommunityUtil.getJSONString(0);
     }

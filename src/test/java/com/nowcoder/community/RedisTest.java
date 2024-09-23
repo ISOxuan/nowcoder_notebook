@@ -4,6 +4,9 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.dao.DataAccessException;
+import org.springframework.data.redis.connection.RedisConnection;
+import org.springframework.data.redis.core.RedisCallback;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -73,5 +76,65 @@ public class RedisTest {
         redisTemplate.opsForHyperLogLog().union(unionKey,redisKey2,redisKey3,redisKey4);
 
         System.out.println(redisTemplate.opsForHyperLogLog().size(unionKey));
+    }
+
+    //统计一组数据的布尔值
+    @Test
+    public void testBitMap(){
+        String redisKey = "test:bm:01";
+
+        //记录
+        redisTemplate.opsForValue().setBit(redisKey,1,true);
+        redisTemplate.opsForValue().setBit(redisKey,4,true);
+        redisTemplate.opsForValue().setBit(redisKey,7,true);
+
+        //查询
+        System.out.println(redisTemplate.opsForValue().getBit(redisKey,0));
+        System.out.println(redisTemplate.opsForValue().getBit(redisKey,1));
+        System.out.println(redisTemplate.opsForValue().getBit(redisKey,2));
+
+        //统计
+        Object obj = redisTemplate.execute(new RedisCallback() {
+            @Override
+            public Object doInRedis(RedisConnection connection) throws DataAccessException {
+                return connection.bitCount(redisKey.getBytes());
+            }
+        });
+        System.out.println(obj);
+    }
+
+    //统计三组数据的布尔值，并对这三组数据做OR运算
+    @Test
+    public void testBitMapOperation(){
+        String redisKey2 = "test:bm:02";
+        redisTemplate.opsForValue().setBit(redisKey2,0,true);
+        redisTemplate.opsForValue().setBit(redisKey2,1,true);
+        redisTemplate.opsForValue().setBit(redisKey2,2,false);
+
+        String redisKey3 = "test:bm:03";
+        redisTemplate.opsForValue().setBit(redisKey3,2,false);
+        redisTemplate.opsForValue().setBit(redisKey3,3,true);
+        redisTemplate.opsForValue().setBit(redisKey3,4,true);
+
+        String redisKey4 = "test:bm:04";
+        redisTemplate.opsForValue().setBit(redisKey4,4,true);
+        redisTemplate.opsForValue().setBit(redisKey4,5,true);
+        redisTemplate.opsForValue().setBit(redisKey4,6,true);
+
+        String redisKey = "test:bm:or";
+        Object obj = redisTemplate.execute(new RedisCallback() {
+            @Override
+            public Object doInRedis(RedisConnection connection) throws DataAccessException {
+                connection.bitOp(RedisConnection.BitOperation.OR,
+                        redisKey.getBytes(), redisKey2.getBytes(), redisKey3.getBytes(), redisKey4.getBytes());
+                return connection.bitCount(redisKey.getBytes());
+            }
+        });
+        System.out.println(obj);
+
+        for (int i = 0 ; i < 7 ; i++){
+            System.out.println(redisTemplate.opsForValue().getBit(redisKey,i));
+        }
+
     }
 }
